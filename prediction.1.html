@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center">Prediction Result</h2>
+        <p class="text-center"><strong>Predicted AQI Bucket:</strong> {{ prediction }}</p>
+
+        <h3 class="mt-4">Visualizations</h3>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='confusion_matrix.png') }}" class="img-fluid" alt="Confusion Matrix">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='aqi_distribution.png') }}" class="img-fluid" alt="AQI Distribution">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='pm25_vs_aqi.png') }}" class="img-fluid" alt="PM2.5 vs AQI">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='pm25_boxplot.png') }}" class="img-fluid" alt="PM2.5 Boxplot">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='correlation_matrix.png') }}" class="img-fluid" alt="Correlation Matrix">
+            </div>
+            <div class="col-md-6">
+                <img src="{{ url_for('static', filename='pollutant_contribution.png') }}" class="img-fluid" alt="Pollutant Contribution">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
